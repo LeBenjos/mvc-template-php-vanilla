@@ -10,5 +10,10 @@ The goal is for our group and others to be able to reuse this template at the be
 This template will continue to evolve as I progress in the field of web development.
 
 ## TUTO - For new developer like me :
-
 ### How and why use the MVC in your project ?
+IN COMMING...
+
+## Bonus :
+Variables -> snake_case
+function -> camelCase
+Class -> PascalCase
