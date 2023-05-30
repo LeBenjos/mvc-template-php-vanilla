@@ -14,6 +14,6 @@ This template will continue to evolve as I progress in the field of web developm
 IN COMMING...
 
 ## Bonus :
-Variables -> snake_case
-function -> camelCase
-Class -> PascalCase
+Variables -> snake_case  
+function -> camelCase  
+Class -> PascalCase  
