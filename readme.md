@@ -15,5 +15,5 @@ IN COMMING...
 
 ## Bonus :
 Variables -> snake_case  
-function -> camelCase  
+Function -> camelCase  
 Class -> PascalCase  
