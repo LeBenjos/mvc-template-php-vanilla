@@ -2,6 +2,7 @@
 
 namespace src\App;
 
+use src\App\Request;
 use src\Controllers\TemplateController;
 
 class Router{

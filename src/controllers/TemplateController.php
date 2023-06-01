@@ -5,7 +5,7 @@ namespace src\Controllers;
 use src\Models\TemplateModel;
 
 class TemplateController{
-    private $_request;
+    public $_request;
 
     public function __construct($request){
         $this->_request = $request;
