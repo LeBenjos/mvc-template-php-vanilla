@@ -1,16 +1,15 @@
 <?php
 
-namespace Models;
+namespace src\Models;
 
-use Database\Database;
+use src\Models\Database;
 use PDO;
 use PDOException;
 
-class Template{
+class TemplateModel{
     private Database $_db;
 
     public function __construct(){
-        require_once '../src/models/Database.php';
         $this->_db = new Database;
     }
 

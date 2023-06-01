@@ -1,16 +1,27 @@
 <?php 
 
-namespace Controller;
+namespace src\Controllers;
 
-use Models\Template;
+use src\Models\TemplateModel;
 
 class TemplateController{
+    private $_request;
 
-    public function template(){
-        require_once "../src/models/TemplateModel.php";
-        $template_model = new Template();
+    public function __construct($request){
+        $this->_request = $request;
+    }
+
+    // Call Models and View for the main page : "/index.php" || "/"
+    public function template(): void{
+        $template_model = new TemplateModel();
         $content = $template_model->getContent();
-        require_once "../src/views/TemplateView.php";
+        require_once "../src/Views/TemplateView.php";
+    }
+
+    // Call View for the error 404 page
+    public function error404(): void{
+        $content = "error 404 template";
+        require_once "../src/Views/TemplateView.php";
     }
     
 }

@@ -1,41 +1,45 @@
 <?php
 
-namespace Router;
+namespace src\App;
 
-use Controller\TemplateController;
+use src\Controllers\TemplateController;
 
 class Router{
     private array $_routes;
-    private string $_url;
-    private string $_methode;
+    private Request $_request;
 
     public function __construct(){
-        require_once "../src/app/routes.php";
+        // Get all routes!
+        require_once "../src/App/routes.php";
         $this->_routes = $routes;
     }
 
-    public function decide(){
-        $this->_method = filter_input(INPUT_SERVER, "REQUEST_METHOD");
-        $this->_url = filter_input(INPUT_GET, "p") ? filter_input(INPUT_GET, "p") : "template";
+    // Get data related to the page where we are
+    public function getRequest(): void{
+        $this->_request = new Request;
         $foundRoute = $this->findRoute();
         if(!$foundRoute){
             http_response_code(404);
+            $controller = new TemplateController($this->_request);
+            $controller->error404();
             exit();
         }
         $this->actualCall($foundRoute[2], $foundRoute[3]);
     }
 
-    private function findRoute() : ?array{
+    // Find and get a route if it exists.
+    private function findRoute(): ?array{
         foreach($this->_routes as $_route){
-            if($_route[0] == $this->_method && $_route[1] == $this->_url){
+            if($_route[0] == $this->_request->_method && $_route[1] == $this->_request->_url){
                 return $_route;
             }
         }
         return null;
     }
 
-    private function actualCall($controllerClass, $methodName){
-        $controller = new $controllerClass();
+    // Call controller and controller method.
+    private function actualCall($controllerClass, $methodName): void{
+        $controller = new $controllerClass($this->_request);
         $controller->$methodName();
     }
 

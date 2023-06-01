@@ -1,6 +1,7 @@
 <?php
 
-namespace Database;
+namespace src\Models;
+
 use PDO;
 use PDOException;
 

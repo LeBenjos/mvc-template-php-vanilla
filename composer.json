@@ -1,0 +1,16 @@
+{
+    "name": "lebenjos/mvc-template-php-vanilla",
+    "description": "Open-source MVC template for myself and other newcomers in development.",
+    "autoload": {
+        "psr-4": {
+            "src\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "LeBenjos",
+            "email": "benjamin.schinkel01@outlook.fr"
+        }
+    ],
+    "require": {}
+}

@@ -1,6 +1,7 @@
 <?php
 
-require_once '../src/app/Router.php';
-use Router\Router;
+// Create the router and start it!
+require_once '../vendor/autoload.php';
+use src\App\Router;
 $router = new Router();
-$router->decide();
+$router->getRequest();

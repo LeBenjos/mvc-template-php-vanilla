@@ -1,0 +1,6 @@
+# Idea (webstorm)
+.idea
+.idea/*
+
+# DS-Store
+.DS_Store
