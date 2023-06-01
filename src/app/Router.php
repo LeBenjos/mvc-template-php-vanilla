@@ -1,9 +1,9 @@
 <?php
 
-namespace src\App;
+namespace src\app;
 
-use src\App\Request;
-use src\Controllers\TemplateController;
+use src\app\Request;
+use src\controllers\TemplateController;
 
 class Router{
     private array $_routes;

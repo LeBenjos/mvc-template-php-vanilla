@@ -12,8 +12,3 @@ This template will continue to evolve as I progress in the field of web developm
 ## TUTO - For new developer like me :
 ### How and why use the MVC in your project ?
 IN COMMING...
-
-## Bonus :
-Variables -> snake_case  
-Function -> camelCase  
-Class -> PascalCase  

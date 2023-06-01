@@ -1,8 +1,8 @@
 <?php
 
-namespace src\Models;
+namespace src\models;
 
-use src\Models\Database;
+use src\models\Database;
 use PDO;
 use PDOException;
 
