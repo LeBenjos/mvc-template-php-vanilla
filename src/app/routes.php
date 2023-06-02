@@ -1,6 +1,6 @@
 <?php
 
-use src\controllers\TemplateController;
+use controllers\TemplateController;
 
 /* Define all routes.
 * Array explications

@@ -1,8 +1,8 @@
 <?php 
 
-namespace src\controllers;
+namespace controllers;
 
-use src\models\TemplateModel;
+use models\TemplateModel;
 
 class TemplateController{
     public $_request;

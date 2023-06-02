@@ -1,6 +1,6 @@
 <?php
 
-namespace src\app;
+namespace app;
 
 class Request
 {
