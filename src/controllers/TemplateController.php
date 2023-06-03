@@ -23,6 +23,7 @@ class TemplateController{
     // Call View for the error 404 page
     public function error404(): void{
         $content = "error 404 template";
+        $this->updateStyles(['template.css']);
         require_once "../src/Views/TemplateView.php";
     }
 
