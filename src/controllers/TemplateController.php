@@ -1,10 +1,12 @@
 <?php 
 
 namespace controllers;
+use controllers\Controller;
 
+// Models
 use models\TemplateModel;
 
-class TemplateController{
+class TemplateController extends Controller{
     public $_request;
     public array $_styles = [];
 
@@ -26,9 +28,4 @@ class TemplateController{
         $this->updateStyles(['template.css']);
         require_once "../src/Views/TemplateView.php";
     }
-
-    private function updateStyles($styles){
-        $this->_styles = $styles;
-    }
-    
 }
