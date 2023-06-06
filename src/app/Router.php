@@ -32,7 +32,7 @@ class Router{
 
     // Call controller and controller method.
     private function actualCall($controllerClass, $methodName): void{
-        $controller = new $controllerClass($this->_request);
+        $controller = new $controllerClass($this->_route);
         $controller->$methodName();
     }
 }
