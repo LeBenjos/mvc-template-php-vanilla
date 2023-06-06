@@ -3,39 +3,31 @@
 namespace app;
 
 use app\Request;
+use app\Routes;
 use controllers\TemplateController;
 
 class Router{
-    private array $_routes;
+    // private array $_routes;
+    private Routes $_routes;
+    private ?Route $_route;
     private Request $_request;
 
     public function __construct(){
         // Get all routes!
-        require_once "../src/App/routes.php";
+        require_once "../src/App/routesetup.php";
         $this->_routes = $routes;
     }
 
     // Get data related to the page where we are
     public function getRequest(): void{
         $this->_request = new Request;
-        $foundRoute = $this->findRoute();
-        if(!$foundRoute){
+        $this->_route = $this->_routes->findRoute($this->_request);
+        if(!$this->_route){
             http_response_code(404);
-            $controller = new TemplateController($this->_request);
-            $controller->error404();
+            $this->actualCall(TemplateController::class, 'error404');
             exit();
         }
-        $this->actualCall($foundRoute[2], $foundRoute[3]);
-    }
-
-    // Find and get a route if it exists.
-    private function findRoute(): ?array{
-        foreach($this->_routes as $_route){
-            if($_route[0] == $this->_request->_method && $_route[1] == $this->_request->_url){
-                return $_route;
-            }
-        }
-        return null;
+        $this->actualCall($this->_route->_controller, $this->_route->_controllerMethod);
     }
 
     // Call controller and controller method.
@@ -43,5 +35,4 @@ class Router{
         $controller = new $controllerClass($this->_request);
         $controller->$methodName();
     }
-
 }

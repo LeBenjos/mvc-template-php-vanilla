@@ -1,15 +1,20 @@
 <?php
 
-use controllers\TemplateController;
+namespace app;
 
-/* Define all routes.
-* Array explications
-* [0] = method
-* [1] = url
-* [2] = controller
-* [3] = function
-* [4] = Middleware (optionnal)
-*/
-$routes = [
-    ["GET", "template", TemplateController::class, 'template'],
-];
+class Routes {
+    private array $_routes = [];
+
+    public function addRoute($route){
+        array_push($this->_routes, $route);
+    }
+
+    public function findRoute($request){
+        foreach ($this->_routes as $route){
+            if($request->_method == $route->_method && $request->_url == $route->_url){
+                return $route;
+            }
+        }
+        return null;
+    }
+}
