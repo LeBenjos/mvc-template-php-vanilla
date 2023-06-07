@@ -9,7 +9,7 @@ return array(
     'src\\' => array($baseDir . '/src'),
     'router\\' => array($baseDir . '/src/Router'),
     'repository\\' => array($baseDir . '/src/Repository'),
-    'models\\' => array($baseDir . '/src/Models'),
-    'controllers\\' => array($baseDir . '/src/Controllers'),
+    'models\\' => array($baseDir . '/src/Model'),
+    'controllers\\' => array($baseDir . '/src/Controller'),
     'app\\' => array($baseDir . '/src/App'),
 );

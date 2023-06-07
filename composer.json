@@ -5,8 +5,8 @@
         "psr-4": {
             "src\\": "src/",
             "app\\": "src/App/",
-            "controllers\\": "src/Controllers/",
-            "models\\": "src/Models/",
+            "controllers\\": "src/Controller/",
+            "models\\": "src/Model/",
             "router\\": "src/Router/",
             "repository\\": "src/Repository/"
         }
