@@ -1,11 +1,11 @@
 <?php 
 
-namespace repository;
+namespace Repository;
 
-use app\Database;
+use App\Database;
 use PDO;
 use PDOException;
-use models\TemplateModel;
+use Model\TemplateModel;
 
 class TemplateRepository {
     private Database $_db;

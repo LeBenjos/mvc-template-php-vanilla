@@ -1,10 +1,10 @@
 <?php
 
-namespace router;
+namespace Router;
 
-use app\Request;
-use router\Routes;
-use router\Route;
+use App\Request;
+use Router\Routes;
+use Router\Route;
 
 // Controllers
 use controllers\TemplateController;

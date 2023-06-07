@@ -1,10 +1,10 @@
 <?php
 
-namespace router;
+namespace Router;
 
-use app\Request;
-use router\Route;
-use controllers\TemplateController;
+use App\Request;
+use Router\Route;
+use Controller\TemplateController;
 
 
 class Routes {

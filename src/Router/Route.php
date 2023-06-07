@@ -1,6 +1,6 @@
 <?php
 
-namespace router;
+namespace Router;
 
 class Route {
     private string $_method = "GET";

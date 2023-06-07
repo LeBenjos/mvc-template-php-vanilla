@@ -1,11 +1,11 @@
 <?php 
 
-namespace controllers;
-use controllers\Controller;
+namespace Controller;
+use Controller\Controller;
 
 // Models
-use models\TemplateModel;
-use repository\TemplateRepository;
+use Model\TemplateModel;
+use Repository\TemplateRepository;
 
 class TemplateController extends Controller{
     public $_request;
