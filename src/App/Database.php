@@ -13,7 +13,16 @@ class Database {
     private string $userPassword = "";
     public PDO $pdo;
 
-    public function __construct(){
+    private static ?self $instance = null;
+    public static function getInstance(): self{
+        if (static::$instance === null) {
+            static::$instance = new self;
+        }
+        
+        return static::$instance;
+    }
+
+    private function __construct(){
         try {
             $this->pdo = new PDO(
                 "$this->motor:host=$this->host;dbname=$this->dbName", 
