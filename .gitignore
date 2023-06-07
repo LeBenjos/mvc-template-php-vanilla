@@ -4,3 +4,6 @@
 # Idea (webstorm)
 .idea
 .idea/*
+
+#Composer
+.composer.phar

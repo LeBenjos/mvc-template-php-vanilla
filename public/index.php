@@ -2,6 +2,6 @@
 
 // Create the router and start it!
 require_once '../vendor/autoload.php';
-use app\Router;
+use router\Router;
 $router = new Router();
 $router->getRequest();

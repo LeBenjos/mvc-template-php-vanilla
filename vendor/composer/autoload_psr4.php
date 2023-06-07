@@ -7,7 +7,9 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'src\\' => array($baseDir . '/src'),
-    'models\\' => array($baseDir . '/src/models'),
-    'controllers\\' => array($baseDir . '/src/controllers'),
-    'app\\' => array($baseDir . '/src/app'),
+    'router\\' => array($baseDir . '/src/Router'),
+    'repository\\' => array($baseDir . '/src/Repository'),
+    'models\\' => array($baseDir . '/src/Models'),
+    'controllers\\' => array($baseDir . '/src/Controllers'),
+    'app\\' => array($baseDir . '/src/App'),
 );

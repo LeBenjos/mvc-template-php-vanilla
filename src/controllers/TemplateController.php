@@ -5,18 +5,21 @@ use controllers\Controller;
 
 // Models
 use models\TemplateModel;
+use repository\TemplateRepository;
 
 class TemplateController extends Controller{
     public $_request;
     public array $_styles = [];
+    public TemplateRepository $_templateRepository;
 
     public function __construct($request){
         $this->_request = $request;
+        $this->_templateRepository = new TemplateRepository();
     }
 
     // Call Models and View for the main page : "/index.php" || "/"
     public function template(): void{
-        $template_model = new TemplateModel();
+        $_templateRepository = new TemplateModel();
         $content = $template_model->getContent();
         $this->updateStyles(['template.css']);
         require_once "../src/Views/TemplateView.php";
