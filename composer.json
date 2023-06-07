@@ -4,11 +4,11 @@
     "autoload": {
         "psr-4": {
             "src\\": "src/",
-            "app\\": "src/App/",
-            "controllers\\": "src/Controller/",
-            "models\\": "src/Model/",
-            "router\\": "src/Router/",
-            "repository\\": "src/Repository/"
+            "App\\": "src/App/",
+            "Controller\\": "src/Controller/",
+            "Model\\": "src/Model/",
+            "Router\\": "src/Router/",
+            "Repository\\": "src/Repository/"
         }
     },
     "authors": [

@@ -11,22 +11,22 @@ class ComposerStaticInit11b978e8713049378c0c4e8869faac52
         array (
             'src\\' => 4,
         ),
-        'r' => 
+        'R' => 
         array (
-            'router\\' => 7,
-            'repository\\' => 11,
+            'Router\\' => 7,
+            'Repository\\' => 11,
         ),
-        'm' => 
+        'M' => 
         array (
-            'models\\' => 7,
+            'Model\\' => 6,
         ),
-        'c' => 
+        'C' => 
         array (
-            'controllers\\' => 12,
+            'Controller\\' => 11,
         ),
-        'a' => 
+        'A' => 
         array (
-            'app\\' => 4,
+            'App\\' => 4,
         ),
     );
 
@@ -35,23 +35,23 @@ class ComposerStaticInit11b978e8713049378c0c4e8869faac52
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),
-        'router\\' => 
+        'Router\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src/Router',
         ),
-        'repository\\' => 
+        'Repository\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src/Repository',
         ),
-        'models\\' => 
+        'Model\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src/Model',
         ),
-        'controllers\\' => 
+        'Controller\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src/Controller',
         ),
-        'app\\' => 
+        'App\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src/App',
         ),
