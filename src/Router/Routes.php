@@ -14,12 +14,12 @@ class Routes {
         array_push($this->routes, $route);
     }
 
-    public function getRoute(Request $request): Route{
+    public function getRoute(Request $request): ?Route{
         foreach ($this->routes as $route){
             if($request->method == $route->getMethod() && $request->url == $route->getUrl()){
                 return $route;
             }
         }
-        return ((new Route("template", TemplateController::class, 'error404'))->setTitle("PAGE NOT FOUND"));
+        return null;
     }
 }
