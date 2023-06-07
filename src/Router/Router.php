@@ -16,7 +16,6 @@ class Router{
     private Request $_request;
 
     public function __construct(){
-
         $this->_routes = new Routes();
 
         $this->_routes->addRoute(
@@ -27,8 +26,8 @@ class Router{
     }
 
     // Get data related to the page where we are
-    public function getRequest(): void{
-        $this->_request = new Request;
+    public function resolve(): void{
+        $this->_request = new Request();
         $this->_route = $this->_routes->getRoute($this->_request);
         // if(!$this->_route){
         //     http_response_code(404);
