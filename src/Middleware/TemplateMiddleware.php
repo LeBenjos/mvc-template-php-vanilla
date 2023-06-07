@@ -4,6 +4,6 @@ namespace Middleware;
 
 use Middleware\Middleware;
 
-class MiddlewareTemplate implements Middleware{
+class TemplateMiddleware implements Middleware{
     
 }
