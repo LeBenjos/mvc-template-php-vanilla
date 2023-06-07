@@ -8,24 +8,15 @@ use Controller\TemplateController;
 
 
 class Routes {
-    private array $_routes = [];
+    private array $routes = [];
 
     public function addRoute($route): void{
-        array_push($this->_routes, $route);
+        array_push($this->routes, $route);
     }
 
-    // public function findRoute($request){
-    //     foreach ($this->_routes as $route){
-    //         if($request->_method == $route->_method && $request->_url == $route->_url){
-    //             return $route;
-    //         }
-    //     }
-    //     return null;
-    // }
-
-    public function getRoute(Request $request){
-        foreach ($this->_routes as $route){
-            if($request->_method == $route->getMethod() && $request->_url == $route->getUrl()){
+    public function getRoute(Request $request): Route{
+        foreach ($this->routes as $route){
+            if($request->method == $route->getMethod() && $request->url == $route->getUrl()){
                 return $route;
             }
         }

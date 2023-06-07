@@ -2,33 +2,28 @@
 
 namespace Controller;
 use Controller\Controller;
+use App\Request;
+use Router\Route;
 
-// Models
-use Model\TemplateModel;
+// Repository
 use Repository\TemplateRepository;
 
 class TemplateController extends Controller{
-    public $_request;
-    public array $_styles = [];
-    public TemplateRepository $_templateRepository;
+    public Request $request;
+    public Route $route;
+    public array $styles = [];
+    public TemplateRepository $templateRepository;
 
-    public function __construct($request){
-        $this->_request = $request;
-        $this->_templateRepository = new TemplateRepository();
+    public function __construct(){
+        $this->templateRepository = new TemplateRepository();
     }
 
     // Call Models and View for the main page : "/index.php" || "/"
-    public function template(): void{
-        $_templateRepository = new TemplateModel();
-        $content = $template_model->getContent();
+    public function template(Request $request, Route $route): void{
+        $this->request = $request;
+        $this->route = $route;
+        $content = ($this->templateRepository->getContent());
         $this->updateStyles(['template.css']);
-        require_once "../src/Views/TemplateView.php";
-    }
-
-    // Call View for the error 404 page
-    public function error404(): void{
-        $content = "error 404 template";
-        $this->updateStyles(['template.css']);
-        require_once "../src/Views/TemplateView.php";
+        $this->render("TemplateView.php", $content);
     }
 }

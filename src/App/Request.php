@@ -4,17 +4,17 @@ namespace App;
 
 class Request
 {
-    public string $_method; // GET, POST...
-    public string $_url; // url "p" param
-    public array $_headers; // Headers informations
-    public array $_queryParams; // GET param
-    public array $_rawBody; // POST param
+    public string $method; // GET, POST...
+    public string $url; // url "p" param
+    public array $headers; // Headers informations
+    public array $queryParams; // GET param
+    public array $rawBody; // POST param
 
     public function __construct(){
-       $this->_method = filter_input(INPUT_SERVER, "REQUEST_METHOD");
-       $this->_url = filter_input(INPUT_GET, "p") ? filter_input(INPUT_GET, "p") : "template";
-       $this->_headers = $_SERVER;
-       $this->_queryParams = $_GET;
-       $this->_rawBody = $_POST;
+       $this->method = filter_input(INPUT_SERVER, "REQUEST_METHOD");
+       $this->url = filter_input(INPUT_GET, "p") ? filter_input(INPUT_GET, "p") : "template";
+       $this->headers = $_SERVER;
+       $this->queryParams = $_GET;
+       $this->rawBody = $_POST;
     }
 }

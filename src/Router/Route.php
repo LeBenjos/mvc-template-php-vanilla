@@ -3,61 +3,55 @@
 namespace Router;
 
 class Route {
-    private string $_method = "GET";
-    private string $_url;
-    private $_controller;
-    private string $_controllerMethod;
-    private $_middleware;
-    private string $_title;
+    private string $method = "GET";
+    private string $url;
+    private $controller;
+    private string $controllerMethod;
+    private $middleware;
+    private string $title;
 
-    public function __construct($url, $controller, $controllerMethod){
-        $this->_url = $url;
-        $this->_controller = $controller;
-        $this->_controllerMethod = $controllerMethod;
+    public function __construct(string $url, $controller, string $controllerMethod){
+        $this->url = $url;
+        $this->controller = $controller;
+        $this->controllerMethod = $controllerMethod;
     }
 
     public function setMethod(string $method): self{
-        $this->_method = $method;
+        $this->method = $method;
         return($this);
     }
 
     public function setMiddleware($middleware): self{
-        $this->_middleware = $middleware;
+        $this->middleware = $middleware;
         return($this);
     }
 
     public function setTitle(string $title): self{
-        $this->_title = $title;
+        $this->title = $title;
         return($this);
     }
 
     public function getMethod(): string{
-        return $this->_method;
+        return $this->method;
     }
 
     public function getUrl(): string{
-        return $this->_url;
+        return $this->url;
     }
 
     public function getController(){
-        return $this->_controller;
+        return $this->controller;
     }
 
     public function getControllerMethod(): string{
-        return $this->_controllerMethod;
+        return $this->controllerMethod;
     }
 
     public function getMiddleware(){
-        return $this->_middleware;
+        return $this->middleware;
     }
 
     public function getTitle(): string{
-        return $this->_title;
+        return $this->title;
     }
 }
-
-// TYPEZ LES varibiable
-// typer les retour et les paramètre ":self"
-// Model = Repository
-// Créer une branch public git pour des retours
-// git checkout -b 'decoupage-code'

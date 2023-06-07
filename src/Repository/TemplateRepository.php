@@ -5,25 +5,20 @@ namespace Repository;
 use App\Database;
 use PDO;
 use PDOException;
+
 use Model\TemplateModel;
 
-class TemplateRepository {
-    private Database $_db;
+class TemplateRepository{
+    private Database $db;
 
     public function __construct(){
-        $this->_db = new Database;
+        $this->db = new Database;
     }
 
-    public function getContent(): array {
-        $stmt = $this->_db->_pdo->prepare("SELECT template_content FROM templates");
+    public function getContent(): string{
+        $stmt = $this->db->pdo->prepare("SELECT template_content FROM templates");
         $stmt->execute();
 
-        $contents = [];
-
-        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)["template_content"]) {
-            $contents[] = new TemplateModel($row["template_content"]);
-        }
-
-        return $contents;
+        return ((new TemplateModel($stmt->fetchAll(PDO::FETCH_ASSOC)))->getContent());
     }
 }

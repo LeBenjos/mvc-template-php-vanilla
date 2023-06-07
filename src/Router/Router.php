@@ -7,19 +7,18 @@ use Router\Routes;
 use Router\Route;
 
 // Controllers
-use controllers\TemplateController;
+use Controller\TemplateController;
 
 class Router{
-    // private array $_routes;
-    private Routes $_routes;
-    private Route $_route;
-    private Request $_request;
+    private Routes $routes;
+    private Route $route;
+    private Request $request;
 
     public function __construct(){
-        $this->_routes = new Routes();
+        $this->routes = new Routes();
 
-        $this->_routes->addRoute(
-            (new Route("template", TemplateController::class, 'template'))
+        $this->routes->addRoute(
+            (new Route("template", TemplateController::class, "template"))
             ->setTitle("Template Test")
         );
 
@@ -27,19 +26,14 @@ class Router{
 
     // Get data related to the page where we are
     public function resolve(): void{
-        $this->_request = new Request();
-        $this->_route = $this->_routes->getRoute($this->_request);
-        // if(!$this->_route){
-        //     http_response_code(404);
-        //     $this->actualCall(TemplateController::class, 'error404');
-        //     exit();
-        // }
-        $this->actualCall($this->_route->getController(), $this->_route->getControllerMethod());
+        $this->request = new Request();
+        $this->route = $this->routes->getRoute($this->request);
+        $this->actualCall($this->route->getController(), $this->route->getControllerMethod());
     }
 
     // Call controller and controller method.
     private function actualCall(string $controllerClass, string $methodName): void{
-        $controller = new $controllerClass($this->_route);
-        $controller->$methodName();
+        $controller = new $controllerClass();
+        $controller->$methodName($this->request, $this->route);
     }
 }

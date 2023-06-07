@@ -2,33 +2,31 @@
 
 namespace Model;
 
-// use app\Database;
-// use PDO;
-// use PDOException;
+use App\Database;
+use PDO;
+use PDOException;
 
-// class TemplateModel{
-//     private Database $_db;
+class TemplateModel{
+    private string|array $content;
 
-//     public function __construct(){
-//         $this->_db = new Database;
-//     }
-
-//     public function getContent(){
-//         $stmt = $this->_db->_pdo->prepare("SELECT template_content FROM templates");
-//         $stmt->execute();
-
-//         return $stmt->fetch(PDO::FETCH_ASSOC)["template_content"];
-//     }
-// }
-
-class TemplateModel {
-    public function __construct(private ?string $templateContent){}
-
-    public function getTemplateContent(): ?string{
-        return $this->templateContent;
+    public function __construct(array $contents){
+        $this->content = $this->getSentence($contents);
     }
 
-    public function setTemplateContent(?string $templateContent): void{
-        $this->templateContent = $templateContent;
+    public function getSentence(array $contents){
+        $sentence = '';
+        foreach($contents as $i => $content){
+            if ($i == 0){
+                $sentence .= $content["template_content"];
+            } else {
+                $sentence .= ' ' . $content["template_content"];
+            }
+        }
+
+        return $sentence;
+    }
+
+    public function getContent(): string{
+        return $this->content;
     }
 }
