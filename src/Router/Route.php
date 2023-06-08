@@ -5,12 +5,12 @@ namespace Router;
 class Route {
     private string $method = "GET";
     private string $url;
-    private $controller;
+    private string $controller;
     private string $controllerMethod;
-    private $middleware;
+    private string $middleware;
     private string $title;
 
-    public function __construct(string $url, $controller, string $controllerMethod){
+    public function __construct(string $url, string $controller, string $controllerMethod){
         $this->url = $url;
         $this->controller = $controller;
         $this->controllerMethod = $controllerMethod;
@@ -21,7 +21,7 @@ class Route {
         return($this);
     }
 
-    public function setMiddleware($middleware): self{
+    public function setMiddleware(string $middleware): self{
         $this->middleware = $middleware;
         return($this);
     }
@@ -39,7 +39,7 @@ class Route {
         return $this->url;
     }
 
-    public function getController(){
+    public function getController(): string{
         return $this->controller;
     }
 
@@ -47,7 +47,7 @@ class Route {
         return $this->controllerMethod;
     }
 
-    public function getMiddleware(){
+    public function getMiddleware():string{
         return $this->middleware;
     }
 

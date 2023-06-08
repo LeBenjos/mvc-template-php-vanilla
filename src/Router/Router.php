@@ -11,7 +11,7 @@ use Controller\TemplateController;
 
 class Router{
     private Routes $routes;
-    private Route $route;
+    private ?Route $route;
     private Request $request;
 
     public function __construct(){
