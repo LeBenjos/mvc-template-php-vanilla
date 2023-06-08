@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MVC Template | <?= $this->route->getTitle() ?></title>
+    <title>MVC Template | <?= $data["route"]->getTitle() ?></title>
     <link rel="stylesheet" href="./style.css">
-    <?php foreach($this->styles as $style): ?>
+    <?php foreach($styles as $style): ?>
     <link rel="stylesheet" href="./styles/<?= $style ?>">
     <?php endforeach; ?>
 </head>
 <body>
-    
+
+<?= $content ?>
+
+</body>
+</html>

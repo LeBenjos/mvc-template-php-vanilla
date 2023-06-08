@@ -8,8 +8,10 @@
             "Controller\\": "src/Controller/",
             "Model\\": "src/Model/",
             "Router\\": "src/Router/",
-            "Repository\\": "src/Repository/"
-        }
+            "Repository\\": "src/Repository/",
+            "Service\\": "src/Service/"
+        },
+        "files": ["const.php"]
     },
     "authors": [
         {

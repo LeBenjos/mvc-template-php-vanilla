@@ -6,10 +6,18 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit11b978e8713049378c0c4e8869faac52
 {
+    public static $files = array (
+        'd9a4d743103521829ed68690e4be49e6' => __DIR__ . '/../..' . '/const.php',
+    );
+
     public static $prefixLengthsPsr4 = array (
         's' => 
         array (
             'src\\' => 4,
+        ),
+        'S' => 
+        array (
+            'Service\\' => 8,
         ),
         'R' => 
         array (
@@ -34,6 +42,10 @@ class ComposerStaticInit11b978e8713049378c0c4e8869faac52
         'src\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
+        ),
+        'Service\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/Service',
         ),
         'Router\\' => 
         array (

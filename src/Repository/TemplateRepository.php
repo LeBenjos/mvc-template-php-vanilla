@@ -15,10 +15,28 @@ class TemplateRepository{
         $this->db = Database::getInstance();
     }
 
-    public function getContent(): string{
-        $stmt = $this->db->pdo->prepare("SELECT template_content FROM templates");
+    public function getContent(): TemplateModel{
+        $stmt = $this->db->pdo->prepare("SELECT template_id, template_content FROM templates");
         $stmt->execute();
 
-        return ((new TemplateModel($stmt->fetchAll(PDO::FETCH_ASSOC)))->getContent());
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        if(!$result){
+            throw new NotFoundException();
+        }
+
+        return new TemplateModel($result);
+    }
+
+    public function selectAllContent(): array{
+        $stmt = $this->db->pdo->prepare("SELECT template_id, template_content FROM templates");
+        $stmt->execute();
+        
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $templates = [];
+        foreach($results as $r){
+            $templates[] = new TemplateModel($r);
+        }
+
+        return $templates;
     }
 }
