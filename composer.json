@@ -9,7 +9,8 @@
             "Model\\": "src/Model/",
             "Router\\": "src/Router/",
             "Repository\\": "src/Repository/",
-            "Service\\": "src/Service/"
+            "Service\\": "src/Service/",
+            "Exception\\": "src/Exception/"
         },
         "files": ["const.php"]
     },
@@ -19,5 +20,7 @@
             "email": "benjamin.schinkel01@outlook.fr"
         }
     ],
-    "require": {}
+    "require": {
+        "symfony/var-dumper": "^6.3"
+    }
 }
