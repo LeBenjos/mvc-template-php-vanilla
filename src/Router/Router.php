@@ -6,8 +6,8 @@ use App\Request;
 use Router\Routes;
 use Router\Route;
 
-// Controllers
-use Controller\TemplateController;
+// Exception
+use Exception\NotFound;
 
 class Router{
     private Routes $routes;
@@ -16,19 +16,20 @@ class Router{
 
     public function __construct(){
         $this->routes = new Routes();
-
-        $this->routes->addRoute(
-            (new Route("template", TemplateController::class, "template"))
-            ->setTitle("Template Test")
-        );
-
     }
 
     // Get data related to the page where we are
     public function resolve(): void{
         $this->request = new Request();
         $this->route = $this->routes->getRoute($this->request);
-        $this->actualCall($this->route->getController(), $this->route->getControllerMethod());
+        try {
+            if (!$this->route){
+                throw new NotFound();
+            }
+            $this->actualCall($this->route->getController(), $this->route->getControllerMethod());
+        } catch (\Exception $e) {
+            echo($e->getCodeStatus() . ' ' . $e->getErrorMessage());
+        }
     }
 
     // Call controller and controller method.

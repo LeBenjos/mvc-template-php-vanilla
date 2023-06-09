@@ -15,6 +15,10 @@ class TemplateModel{
         $this->content = $contents["template_content"] ?? null;
     }
 
+    public function getId(): ?string{
+        return $this->id;
+    }
+
     public function getContent(): ?string{
         return $this->content;
     }

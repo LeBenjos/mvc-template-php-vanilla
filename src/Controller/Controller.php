@@ -3,6 +3,7 @@
 namespace Controller;
 
 abstract class Controller{
+    public array $styles = [];
 
     protected function updateStyles(array $styles): void{
         $this->styles = $styles;

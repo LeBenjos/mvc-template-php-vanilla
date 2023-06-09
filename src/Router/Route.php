@@ -7,8 +7,8 @@ class Route {
     private string $url;
     private string $controller;
     private string $controllerMethod;
-    private string $middleware;
-    private string $title;
+    public string $middleware;
+    public string $title;
 
     public function __construct(string $url, string $controller, string $controllerMethod){
         $this->url = $url;

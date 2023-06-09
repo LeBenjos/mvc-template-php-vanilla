@@ -4,13 +4,21 @@ namespace Router;
 
 use App\Request;
 use Router\Route;
-use Controller\TemplateController;
 
+// Controllers
+use Controller\TemplateController;
 
 class Routes {
     private array $routes = [];
 
-    public function addRoute($route): void{
+    public function __construct(){
+        $this->addRoute(
+            (new Route("template", TemplateController::class, "template"))
+            ->setTitle("Template Test")
+        );
+    }
+
+    public function addRoute(Route $route): void{
         array_push($this->routes, $route);
     }
 

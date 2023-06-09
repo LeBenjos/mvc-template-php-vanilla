@@ -9,7 +9,6 @@ use Router\Route;
 use Service\TemplateService;
 
 class TemplateController extends Controller{
-    public array $styles = [];
     public TemplateService $templateService;
 
     public function __construct(){
