@@ -22,9 +22,9 @@ class Routes {
         array_push($this->routes, $route);
     }
 
-    public function getRoute(Request $request): ?Route{
+    public function getRoute(string $method, string $url): ?Route{
         foreach ($this->routes as $route){
-            if($request->method == $route->getMethod() && $request->url == $route->getUrl()){
+            if($method == $route->getMethod() && $url == $route->getUrl()){
                 return $route;
             }
         }

@@ -8,6 +8,7 @@ use Router\Route;
 
 // Exception
 use Exception\NotFound;
+use Controller\ExceptionController;
 
 class Router{
     private Routes $routes;
@@ -21,20 +22,24 @@ class Router{
     // Get data related to the page where we are
     public function resolve(): void{
         $this->request = new Request();
-        $this->route = $this->routes->getRoute($this->request);
+        $this->route = $this->routes->getRoute($this->request->getMethod(), $this->request->getUrl());
         try {
             if (!$this->route){
                 throw new NotFound();
             }
-            $this->actualCall($this->route->getController(), $this->route->getControllerMethod());
+            $this->build($this->route->getController(), $this->route->getControllerMethod());
         } catch (\Exception $e) {
-            echo($e->getCodeStatus() . ' ' . $e->getErrorMessage());
+            $this->buildError($e);
         }
     }
 
     // Call controller and controller method.
-    private function actualCall(string $controllerClass, string $methodName): void{
+    private function build(string $controllerClass, string $methodName): void{
         $controller = new $controllerClass();
         $controller->$methodName($this->request, $this->route);
+    }
+
+    private function buildError(\Exception $e){
+        $controller = new ExceptionController($e);
     }
 }

@@ -4,13 +4,13 @@ namespace Router;
 
 class Route {
     private string $method = "GET";
-    private string $url;
-    private string $controller;
-    private string $controllerMethod;
-    public string $middleware;
-    public string $title;
+    private ?string $url;
+    private ?string $controller;
+    private ?string $controllerMethod;
+    private string $middleware;
+    private string $title;
 
-    public function __construct(string $url, string $controller, string $controllerMethod){
+    public function __construct(?string $url = null, ?string $controller = null, ?string $controllerMethod = null){
         $this->url = $url;
         $this->controller = $controller;
         $this->controllerMethod = $controllerMethod;
@@ -18,17 +18,17 @@ class Route {
 
     public function setMethod(string $method): self{
         $this->method = $method;
-        return($this);
+        return $this;
     }
 
     public function setMiddleware(string $middleware): self{
         $this->middleware = $middleware;
-        return($this);
+        return $this;
     }
 
     public function setTitle(string $title): self{
         $this->title = $title;
-        return($this);
+        return $this;
     }
 
     public function getMethod(): string{
