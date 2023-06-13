@@ -2,19 +2,15 @@
 
 namespace Repository;
 
+use Repository\Repository;
+
 use App\Database;
 use PDO;
 use PDOException;
 
 use Model\TemplateModel;
 
-class TemplateRepository{
-    private Database $db;
-
-    public function __construct(){
-        $this->db = Database::getInstance();
-    }
-
+class TemplateRepository extends Repository{
     public function getContent(): TemplateModel{
         $stmt = $this->db->pdo->prepare("SELECT template_id, template_content FROM templates");
         $stmt->execute();
