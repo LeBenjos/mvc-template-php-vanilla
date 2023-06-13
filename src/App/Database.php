@@ -6,11 +6,11 @@ use PDO;
 use PDOException;
 
 class Database {
-    private string $motor = __DB_MOTOR__;
-    private string $host = __DB_HOST__;
-    private string $dbName = __DB_NAME__;
-    private string $userName = __DB_USERNAME__;
-    private string $userPassword = __DB_PASSWORD__;
+    private string $motor = DB_MOTOR;
+    private string $host = DB_HOST;
+    private string $dbName = DB_NAME;
+    private string $userName = DB_USERNAME;
+    private string $userPassword = DB_PASSWORD;
     public PDO $pdo;
 
     private static ?self $instance = null;
