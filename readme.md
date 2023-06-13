@@ -58,7 +58,7 @@ Open a terminal and write : "sudo vim /etc/hosts"
     127.0.0.1       template.com
 ```
 
-Reboot Apache and now you can go on **http://template.com/** or **http://localhost/mvc-template-php-vanilla/public/?p=template** it's same !
+Reboot Apache and now you can go on **http://template.com/** or **http://localhost/hexagonal-template-php-vanilla/public/template** or **http://localhost/mvc-template-php-vanilla/public/?p=template** it's same !
 
 ## Thanks
 Thanks to Renaud Berthier and Hugo Medina for their valuable assistance in both this project and my learning.
