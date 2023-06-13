@@ -14,13 +14,19 @@ This template will continue to evolve as I progress in the field of web developm
 
 ## How use this template ?
 ---
-TODO...
+TODO... git clone ...
+
+On startup on your project terminal : 
+
+```bash
+    php composer.phar dump-autoload
+```
 
 ### Config URI :
 ---
 In **/Applications/MAMP/conf/apache/extra/httpd-vhosts.conf** :
 ```conf
-    # Optionnal but if is not working
+    # Optionnal -> if is not working
     <VirtualHost *:80>
         ServerAdmin webmaster@dummy-host.example.com
         DocumentRoot "/Applications/MAMP/htdocs"
@@ -29,10 +35,10 @@ In **/Applications/MAMP/conf/apache/extra/httpd-vhosts.conf** :
         CustomLog "logs/localhost-access_log" common
     </VirtualHost>
 
-    # Write this !
+    # Write this :
     <VirtualHost *:80>
         ServerAdmin webmaster@dummy-host.example.com
-        DocumentRoot "/Applications/MAMP/htdocs/projet-housing-platform-hetic/public"
+        DocumentRoot "/Applications/MAMP/htdocs/hexagonal-template-php-vanilla/public"
         ServerName template.com
         ErrorLog "logs/template.com-error_log"
         CustomLog "logs/template.com-access_log" common
