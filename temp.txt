@@ -1,2 +1,4 @@
 Middleware TODO
-
+Exception TODO
+Separation of Codable and Uncodable TODO
+URI (endpoint) TODO
