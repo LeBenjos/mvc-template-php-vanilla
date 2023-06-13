@@ -2,11 +2,7 @@
 
 namespace Model;
 
-use App\Database;
-use PDO;
-use PDOException;
-
-class TemplateModel{
+class TemplateModel extends Model{
     private readonly int $id;
     private ?string $content;
 
