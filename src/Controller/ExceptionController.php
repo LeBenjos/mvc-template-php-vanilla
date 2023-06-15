@@ -12,6 +12,8 @@ class ExceptionController extends Controller{
     public function __construct(\Exception $error){
         $this->error = $error;
 
+        http_response_code($error->getCode());
+
         switch($error->getCode()){
             case "404":
                 $this->error404();
