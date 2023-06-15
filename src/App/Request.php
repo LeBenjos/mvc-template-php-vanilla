@@ -2,8 +2,7 @@
 
 namespace App;
 
-class Request
-{
+class Request{
     private string $method; // GET, POST...
     private string $url; // url "p" param
     private array $headers; // Headers informations
