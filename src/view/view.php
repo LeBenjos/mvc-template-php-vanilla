@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hexagonal Template | <?= $data["route"]->getTitle() ?></title>
-    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="<?= __ROOT_FILE__ ?>/styles/style.css">
     <?php foreach($styles as $style): ?>
-    <link rel="stylesheet" href="./styles/<?= $style ?>">
+    <link rel="stylesheet" href="<?= __ROOT_FILE__ ?>/styles/<?= $style ?>">
     <?php endforeach; ?>
 </head>
 <body>

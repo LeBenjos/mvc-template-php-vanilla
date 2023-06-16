@@ -5,12 +5,14 @@ namespace Controller;
 abstract class Controller{
     public array $styles = [];
 
+    
     protected function updateStyles(array $styles): void{
         $this->styles = $styles;
     }
     
     protected function render(string $view, array $styles, array $data): void{
-
+        $header = $this->captureOutput('template', 'header.php', $data);
+        $footer = $this->captureOutput('template', 'footer.php', $data);
         $content = $this->captureOutput('content', $view, $data);
 
         require_once __ROOT_DIR__ . "/src/view/view.php";
