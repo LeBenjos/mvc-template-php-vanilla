@@ -7,9 +7,7 @@ use Exception\AbstractException;
 use Router\Route;
 
 class ExceptionController extends Controller{
-    private \Exception $error;
-
-    public function __construct(\Exception $error){
+    public function __construct(private \Exception $error){
         $this->error = $error;
 
         http_response_code($error->getCode());

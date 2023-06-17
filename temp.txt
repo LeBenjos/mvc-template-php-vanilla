@@ -1,3 +1,6 @@
 Middleware TODO
 Exception TODO
 Separation of Codable and Uncodable TODO
+refacto URI => new Route('/...', ...., ....)
+Name URI with regex (http://localhost/page/1)
+Separation back PHP and front Json
