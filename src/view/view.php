@@ -14,5 +14,8 @@
 
 <?= $content ?>
 
+<?php foreach($scripts as $script): ?>
+    <script src="<?= __ROOT_FILE__ ?>/scripts/<?= $script ?>"></script>
+<?php endforeach; ?>
 </body>
 </html>
