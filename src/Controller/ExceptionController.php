@@ -22,7 +22,7 @@ class ExceptionController extends Controller{
     public function error404(): void{
         $this->updateStyles(['exception.css']);
         
-        $this->render($this->error->getViewFile(),  $this->styles ,[
+        $this->render($this->error->getViewFile(),  $this->styles, $this->scripts ,[
             "route" => (new Route())->setTitle("Error 404"),
             "code" => $this->error->getCode(),
             "message" => $this->error->getMessage(),
