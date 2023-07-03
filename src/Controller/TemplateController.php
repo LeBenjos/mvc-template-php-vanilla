@@ -18,10 +18,11 @@ class TemplateController extends Controller{
     // Call Models and View for the main page : "/index.php" || "/"
     public function template(Request $request, Route $route): void{
         $this->updateStyles(['template.css']);
+        $this->updateScripts(['template.js']);
 
         $content = $this->templateService->selectContent();
         
-        $this->render("TemplateView.php",  $this->styles ,[
+        $this->render("TemplateView.php",  $this->styles, $this->scripts ,[
             "start" => $content,
             "route" => $route,
             "request" => $request
