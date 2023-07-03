@@ -5,5 +5,8 @@
 .idea
 .idea/*
 
-#Composer
+# Composer
 .composer.phar
+
+# Temp
+.temp.txt
