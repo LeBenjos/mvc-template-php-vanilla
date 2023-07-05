@@ -21,28 +21,6 @@ class ComposerStaticInit11b978e8713049378c0c4e8869faac52
         array (
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Component\\VarDumper\\' => 28,
-            'Service\\' => 8,
-        ),
-        'R' => 
-        array (
-            'Router\\' => 7,
-            'Repository\\' => 11,
-        ),
-        'M' => 
-        array (
-            'Model\\' => 6,
-        ),
-        'E' => 
-        array (
-            'Exception\\' => 10,
-        ),
-        'C' => 
-        array (
-            'Controller\\' => 11,
-        ),
-        'A' => 
-        array (
-            'App\\' => 4,
         ),
     );
 
@@ -58,34 +36,6 @@ class ComposerStaticInit11b978e8713049378c0c4e8869faac52
         'Symfony\\Component\\VarDumper\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/var-dumper',
-        ),
-        'Service\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src/Service',
-        ),
-        'Router\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src/Router',
-        ),
-        'Repository\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src/Repository',
-        ),
-        'Model\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src/Model',
-        ),
-        'Exception\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src/Exception',
-        ),
-        'Controller\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src/Controller',
-        ),
-        'App\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src/App',
         ),
     );
 

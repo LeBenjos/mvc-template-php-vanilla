@@ -9,11 +9,4 @@ return array(
     'src\\' => array($baseDir . '/src'),
     'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
     'Symfony\\Component\\VarDumper\\' => array($vendorDir . '/symfony/var-dumper'),
-    'Service\\' => array($baseDir . '/src/Service'),
-    'Router\\' => array($baseDir . '/src/Router'),
-    'Repository\\' => array($baseDir . '/src/Repository'),
-    'Model\\' => array($baseDir . '/src/Model'),
-    'Exception\\' => array($baseDir . '/src/Exception'),
-    'Controller\\' => array($baseDir . '/src/Controller'),
-    'App\\' => array($baseDir . '/src/App'),
 );

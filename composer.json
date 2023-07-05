@@ -3,14 +3,7 @@
     "description": "Open-source MVC template for myself and other newcomers in development.",
     "autoload": {
         "psr-4": {
-            "src\\": "src/",
-            "App\\": "src/App/",
-            "Controller\\": "src/Controller/",
-            "Model\\": "src/Model/",
-            "Router\\": "src/Router/",
-            "Repository\\": "src/Repository/",
-            "Service\\": "src/Service/",
-            "Exception\\": "src/Exception/"
+            "src\\": "src/"
         },
         "files": ["const.php"]
     },
