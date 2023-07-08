@@ -26,10 +26,11 @@ class Router{
         return $route;
     }
 
-    public function build($route){
+    public function build(Route|\Exception $route){
         if ($route instanceof Route){
-            dump("c'est une route");
-            dump($route);
+            $controller = new ($route->getController())();
+            $methodName = $route->getControllerMethod();
+            $controller->$methodName($this->request, $route);
         } elseif ($route instanceof \Exception){
             http_response_code($route->getCode());
             dump("c'est une exception");

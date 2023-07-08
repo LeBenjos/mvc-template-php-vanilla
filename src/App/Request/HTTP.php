@@ -13,9 +13,19 @@ class HTTP implements Request{
     ){
        $this->method = filter_input(INPUT_SERVER, "REQUEST_METHOD");
        $this->url = filter_input(INPUT_GET, "p") ? filter_input(INPUT_GET, "p") : "/home";
+       $this->url = $this->checkUrl($this->url);
        $this->headers = $_SERVER;
        $this->queryParams = $_GET;
        $this->rawBody = $_POST;
+    }
+
+    // FUNCTIONS
+    private function checkUrl($url){
+        if($url[0] != "/"){
+            return "/" . $url;
+        }
+
+        return $url;
     }
     
     //GETTERS

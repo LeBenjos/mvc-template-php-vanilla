@@ -1,0 +1,5 @@
+Middleware TODO
+Exception TODO
+----
+Name URI with regex (http://localhost/page/1)
+Separation back PHP and front Json
