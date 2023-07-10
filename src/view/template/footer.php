@@ -1,3 +1,3 @@
 <footer>
-    Je suis le footer
+    Footer
 </footer>

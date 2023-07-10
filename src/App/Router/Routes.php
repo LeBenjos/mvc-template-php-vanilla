@@ -12,8 +12,9 @@ class Routes {
         require_once "../src/Routes/routes.php";
     }
 
-    public function addRoute(Route $route): void{
+    public function addRoute(Route $route): self{
         array_push($this->routes, $route);
+        return $this;
     }
 
     public function getRoute(string $method, string $url): ?Route{

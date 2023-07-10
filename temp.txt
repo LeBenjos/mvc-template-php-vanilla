@@ -1,4 +1,4 @@
-Middleware TODO
+Validator TODO
 Exception TODO
 ----
 Name URI with regex (http://localhost/page/1)

@@ -12,7 +12,7 @@ class HTTP implements Request{
         private array $rawBody = [],
     ){
        $this->method = filter_input(INPUT_SERVER, "REQUEST_METHOD");
-       $this->url = filter_input(INPUT_GET, "p") ? filter_input(INPUT_GET, "p") : "/home";
+       $this->url = filter_input(INPUT_GET, "p") ? strtolower(filter_input(INPUT_GET, "p")) : "/home";
        $this->url = $this->checkUrl($this->url);
        $this->headers = $_SERVER;
        $this->queryParams = $_GET;

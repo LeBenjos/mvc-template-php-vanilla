@@ -2,10 +2,12 @@
 
 namespace src\App\Router;
 
+use src\Middleware\Middleware;
+
 class Route {
     private string $method = "GET";
-    private string $middleware;
-    private string $title;
+    private array $middleware = [];
+    private string $title = "";
 
     public function __construct(
         private string $url,
@@ -23,8 +25,8 @@ class Route {
         return $this;
     }
 
-    public function setMiddleware(string $middleware): self{
-        $this->middleware = $middleware;
+    public function setMiddleware(Middleware $middleware): self{
+        array_push($this->middleware, $middleware);
         return $this;
     }
 

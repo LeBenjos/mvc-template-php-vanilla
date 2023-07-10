@@ -1,8 +1,8 @@
 <?php 
 
-namespace Repository;
+namespace src\Repository;
 
-use App\Database;
+use src\App\Database\Database;
 use PDO;
 use PDOException;
 

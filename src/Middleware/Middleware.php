@@ -1,6 +1,6 @@
 <?php
 
-namespace Middleware;
+namespace src\Middleware;
 
 interface Middleware {
     

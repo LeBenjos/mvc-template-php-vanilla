@@ -1,9 +1,9 @@
 <?php
 
-namespace Middleware;
+namespace src\Middleware;
 
-use Middleware\Middleware;
+use src\Middleware\Middleware;
 
 class TemplateMiddleware implements Middleware{
-    
+
 }
