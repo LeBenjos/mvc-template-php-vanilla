@@ -6,6 +6,8 @@ namespace src\App\Router;
 use src\App\Request\Request;
 use src\App\Router\Routes;
 use src\App\Router\Route;
+
+use src\Controller\ExceptionController;
 use \Exception;
 
 class Router{
@@ -20,7 +22,7 @@ class Router{
     public function resolve(): Route|\Exception{
         $route = $this->routes->getRoute($this->request->getMethod(), $this->request->getUrl());
         if(!$route){
-            return new Exception('Page not found', 404);
+            return new \Exception('Page not found', 404);
         } 
 
         return $route;
@@ -28,13 +30,13 @@ class Router{
 
     public function build(Route|\Exception $route){
         if ($route instanceof Route){
-            $controller = new ($route->getController())();
+            $controller = new ($route->getController())($this->request, $route);
             $methodName = $route->getControllerMethod();
-            $controller->$methodName($this->request, $route);
+            $controller->$methodName();
         } elseif ($route instanceof \Exception){
-            http_response_code($route->getCode());
-            dump("c'est une exception");
-            dump($route);
+            $controller = new ExceptionController($this->request, new Route("/" . $route->getCode(), ExceptionController::class, "error" . $route->getCode()), $route);
+            $methodName = "error" . $route->getCode();
+            $controller->$methodName();
         }
     }
 

@@ -2,19 +2,52 @@
 
 namespace src\Controller;
 
+use src\App\Request\Request;
+use src\App\Router\Route;
+
 abstract class Controller{
-    public array $styles = [];
-    public array $scripts = [];
+    public function __construct(
+        private Request $request,
+        private Route $route,
+        private array $styles = [],
+        private array $scripts = [],
+    ){
+        $this->request = $request;
+        $this->route = $route;
+    }
     
-    protected function updateStyles(array $styles): void{
+    protected function setStyles(array $styles): self{
         $this->styles = $styles;
+        return $this;
     }
 
-    protected function updateScripts(array $scripts): void{
+    protected function setScripts(array $scripts): self{
         $this->scripts = $scripts;
+        return $this;
+    }
+
+    protected function getStyles(): array{
+        return $this->styles;
+    }
+
+    protected function getScripts(): array{
+        return $this->scripts;
+    }
+
+    protected function getRoute(): Route{
+        return $this->route;
+    }
+
+    protected function getRequest(): Request{
+        return $this->request;
     }
     
     protected function render(string $view, array $styles, array $scripts, array $data): void{
+        $defaultData = [
+            "route" => $this->getRoute(),
+            "request" => $this->getRequest()
+        ];
+        $data = array_merge($defaultData, $data);
         $header = $this->captureOutput('template', 'header.php', $data);
         $footer = $this->captureOutput('template', 'footer.php', $data);
         $content = $this->captureOutput('content', $view, $data);

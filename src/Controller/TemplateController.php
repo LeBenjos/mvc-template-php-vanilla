@@ -7,22 +7,16 @@ use src\App\Request\Request;
 use src\App\Router\Route;
 
 class TemplateController extends Controller{
-    // public TemplateService $templateService;
 
-    // public function __construct(){
-    //     $this->templateService = new TemplateService();
-    // }
+    public function __construct(Request $request, Route $route){
+        parent::__construct($request, $route);
+    }
 
-    // Call Models and View for the main page : "/index.php" || "/"
-    public function templateMethod(Request $request, Route $route): void{
-        $this->updateStyles(['template.css']);
-        $this->updateScripts(['template.js']);
-
-        // $content = $this->templateService->selectContent();
+    public function templateMethod(): void{
+        $this->setStyles([])->setScripts([]);
         
-        $this->render("templateContent.php",  $this->styles, $this->scripts ,[
-            "route" => $route,
-            "request" => $request
+        $this->render("templateContent.php",  $this->getStyles(), $this->getScripts() ,[
+
         ]);
     }
 }
