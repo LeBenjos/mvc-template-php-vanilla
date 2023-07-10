@@ -7,4 +7,6 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'src\\' => array($baseDir . '/src'),
+    'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
+    'Symfony\\Component\\VarDumper\\' => array($vendorDir . '/symfony/var-dumper'),
 );

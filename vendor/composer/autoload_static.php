@@ -7,6 +7,8 @@ namespace Composer\Autoload;
 class ComposerStaticInit9c1dab174ed0fab1f726e9e378299255
 {
     public static $files = array (
+        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+        '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         'd9a4d743103521829ed68690e4be49e6' => __DIR__ . '/../..' . '/const.php',
     );
 
@@ -15,12 +17,25 @@ class ComposerStaticInit9c1dab174ed0fab1f726e9e378299255
         array (
             'src\\' => 4,
         ),
+        'S' => 
+        array (
+            'Symfony\\Polyfill\\Mbstring\\' => 26,
+            'Symfony\\Component\\VarDumper\\' => 28,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
         'src\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
+        ),
+        'Symfony\\Polyfill\\Mbstring\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
+        ),
+        'Symfony\\Component\\VarDumper\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/var-dumper',
         ),
     );
 
